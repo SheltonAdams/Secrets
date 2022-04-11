@@ -11,8 +11,6 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 const app = express();
 
-const uri = process.env.MONGODB_URI;
-
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(
@@ -38,7 +36,7 @@ app.use(passport.session());
 
 // mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
 mongoose
-  .connect(uri || "mongodb://localhost:27017/userDB")
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/userDB")
   .then(() => {
     console.log("Connected to Database");
   })
