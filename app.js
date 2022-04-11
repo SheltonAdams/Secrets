@@ -9,8 +9,9 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
-
 const app = express();
+
+const uri = process.env.MONGODB_URI;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
