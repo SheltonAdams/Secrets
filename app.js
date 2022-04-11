@@ -38,7 +38,7 @@ app.use(passport.session());
 
 // mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
 mongoose
-  .connect(uri)
+  .connect(uri || "mongodb://localhost:27017/userDB")
   .then(() => {
     console.log("Connected to Database");
   })
