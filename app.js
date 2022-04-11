@@ -36,7 +36,15 @@ app.use(passport.initialize());
 // Tell app to use passport for dealing with sessions.
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
+mongoose
+  .connect("mongodb://localhost/testdb")
+  .then(() => {
+    console.log("Connected to Database");
+  })
+  .catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
+  });
 
 const userSchema = new mongoose.Schema({
   email: String,
