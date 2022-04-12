@@ -1,5 +1,4 @@
-
- A frontend/backend website for you to post your secrets too. I built
-            this using MongoDB ,JavaScript, and css. This application uses local
-            host so please use npm i once you download package from my git hub
-            repository
+ A frontend/backend website for you to post your secrets. I built
+            this using MongoDB, JavaScript, and CSS. This application uses a local
+            host so, please use npm I once you download from my git hub
+            repository https://github.com/SheltonAdams
