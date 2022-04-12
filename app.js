@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const MongoStore = require("connect-mongo")(options);
+const MongoStore = require("connect-mongo");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -26,7 +26,8 @@ app.use(
     // Secret is not added in .env file, 'cause .env file is in .gitignore and it could be lost if .env file is deleted.
     secret: "Our little secret.",
     cookie: { maxAge: 60000 },
-    store: MongoStore.create(options),
+    resave: false,
+    saveUninitialized: false,
   })
 );
 
