@@ -25,8 +25,10 @@ app.use(
   session({
     // Secret is not added in .env file, 'cause .env file is in .gitignore and it could be lost if .env file is deleted.
     secret: "Our little secret.",
+    cookie: { maxAge: 60000 },
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create(options),
   })
 );
 
