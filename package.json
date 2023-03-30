@@ -2,6 +2,7 @@
   "name": "Secrets",
   "version": "1.0.0",
   "description": "",
+  "homepage":"http://SheltonAdams.github.io/Secrets",
   "engines": {
     "node": "16.14.0",
     "npm": "8.3.1"
@@ -12,23 +13,28 @@
     "connect-mongo": "^3.2.0",
     "cookie-session": "^2.0.0",
     "dotenv": "^6.2.0",
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.9",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "mongoose": "^5.4.5",
     "mongoose-findorcreate": "^3.0.0",
-    "passport": "^0.4.0",
+    "passport": "^0.6.0",
     "passport-facebook": "^3.0.0",
-    "passport-google": "^0.3.0",
+    "passport-google": "^0.1.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
